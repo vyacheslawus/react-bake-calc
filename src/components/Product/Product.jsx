@@ -7,11 +7,6 @@ export const Product = ({ item, index }) => {
 
   const nav = useNavigate()
 
-
-  const handleClick = (id, name) => {
-    console.log('your clicked on product: - ', name, 'which having an id: ', id)
-  }
-
   return (
     <div key={index} className="card">
       <div id={item.id} className="card-body">

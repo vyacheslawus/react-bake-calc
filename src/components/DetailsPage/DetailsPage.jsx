@@ -16,14 +16,24 @@ export const DetailsPage = () => {
 
   const product = products[id]
   return (
-    <>
+    <section style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+
+    }}>
 
       <Header />
-
+    
       <h2 style={{
         marginBottom: "2rem",
-        marginTop: "1rem"
-      }}>Oписание процесса:  <span style={{ color: "red", fontWeight: "bold", textAlign: "center" }}> {product.itemName} </span> </h2 >
+        marginTop: "1rem",
+        padding: "10px"
+      }}>Oписание процесса:  
+      <br/>
+      <span style={{ color: "red", fontWeight: "bold", textAlign: "center" }}> {product.itemName} </span> </h2 >
       <h4 style={{
         lineHeight: "1.5rem",
         padding: "0.5rem",
@@ -43,7 +53,11 @@ export const DetailsPage = () => {
         </div>
 
         {product.detailsProcess ?
-          <p>{product.detailsProcess}</p> :
+          <p style={{
+            paddingRight: "20px",
+            paddingLeft: "5px"
+
+          }}>{product.detailsProcess}</p> :
 
 
           <p>not found yet</p>}</h4>
@@ -64,9 +78,11 @@ export const DetailsPage = () => {
 
 
 
-      <Button style={"btn"}> rere  </Button>
+
 
       <Link style={{ padding: "20px", border: "1px solid black", margin: "1rem", borderRadius: "10px", backgroundColor: "grey", color: "white", textAlign: "center" }} to={`/product/${id}`} >Назад к рецептуре</Link>
-    </>
+    
+    </section>
   )
+  
 }

@@ -19,9 +19,15 @@ export default function Card() {
 
   const [recipe, setRecipe] = useState(products)
 
+
+  const [activeRecipe, setActiveRecipe] = useState(false)
+
   const itemNames = recipe.map(item => item.itemName)
 
 
+  const recipeController = () => {
+    setActiveRecipe((prev) => !prev)
+  }
 
 
   const searchHandler = (e) => {
@@ -34,16 +40,16 @@ export default function Card() {
   return (
     <>
 
-      <button className="btn" onClick={() => { nav('/create-new-recipe'), console.log('rere') }} >create card page</button>
+      <button 
+      className="btn" 
+      // onClick={() => { nav('/create-new-recipe'), console.log('rere') }} 
+      onClick={recipeController}
+      >
+        Создать рецепт
+      </button>
 
-      {/* <CreateProductForm setRecipe={setRecipe} style={{
-        display: ""
-      }} /> */}
 
-      {/* <Button
-        style={"btn"}
-        click={() => { handleClick() }}
-      >oepn modal</Button> */}
+      {activeRecipe ? <CreateProductForm setRecipe={setRecipe} recipe={recipe} /> : ''}
 
 
       <input

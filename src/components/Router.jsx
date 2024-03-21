@@ -4,6 +4,7 @@ import { ProductPage } from './ProductPage/ProductPage';
 import { DetailsPage } from './DetailsPage/DetailsPage';
 import { CreatePage } from './CreatePage/CreatePage';
 import { products } from '../data';
+import CreateProductForm from './CreateProductForm/CreateProductForm';
 
 export const Routerr = () => {
   return (
